@@ -37,6 +37,7 @@ body {
 }
 a { color: inherit; }
 img { display: block; max-width: 100%; }
+cite { font-style: normal; }
 
 /* --- SPINE (signature structural device) --- */
 .spine {
@@ -387,6 +388,16 @@ section.alt {
 }
 .col-block p { font-size: 15px; color: var(--slate); line-height: 1.6; }
 
+/* serif display quote — without the measured-quote device */
+.serif-quote {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(26px, 3.2vw, 38px);
+  font-style: italic;
+  line-height: 1.3;
+  margin-top: 48px;
+  max-width: 22ch;
+}
+
 /* --- BELIEFS --- */
 .beliefs { margin-top: 44px; border-top: 2px solid var(--ink); }
 .belief {
@@ -552,13 +563,14 @@ footer .fmono { font-family: var(--mono); font-size: 11.5px; letter-spacing: .1e
 <nav>
   <div class="wrap">
     <a class="navmark" href="#" aria-label="Vaney Hariri — home">
-      <!-- wordmark-dark from brand kit -->
+      <!-- wordmark-dark from brand kit marks/wordmark-dark.svg -->
       <svg width="148" height="40" viewBox="0 0 440 140" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <text x="28" y="86" font-family="'DM Serif Display',serif" font-style="italic" font-size="64" fill="#FAF7F2">V</text>
         <circle cx="59" cy="85" r="3.2" fill="#E8590C"/>
         <text x="71" y="86" font-family="'DM Serif Display',serif" font-size="40" fill="#FAF7F2">aney Hariri</text>
         <rect x="28" y="102" width="270" height="3" fill="#FAF7F2"/>
         <rect x="28" y="102" width="42" height="3" fill="#E8590C"/>
+        <text x="28" y="132" font-family="'IBM Plex Mono',monospace" font-size="11" letter-spacing="3" fill="#8FA0B0">&#9488; LEADERSHIP &#183; CULTURE &#183; STRATEGY &#9492;</text>
       </svg>
     </a>
     <ul>
@@ -626,19 +638,19 @@ footer .fmono { font-family: var(--mono); font-size: 11.5px; letter-spacing: .1e
 
     <div class="talks">
       <div class="talk">
-        <span class="no">TEDXSIOUXFALLS · 2019</span>
-        <h3>Low on Leaders</h3>
-        <p>18 minutes on why leaders go alone, and what it costs us. The rock story — what it actually takes to develop leaders in a community that says it wants them.</p>
-        <a href="https://www.youtube.com/@yunghp1" target="_blank" rel="noopener">WATCH THE TALK →</a>
-      </div>
-      <div class="talk">
-        <span class="no">TEDXSIOUXFALLS · 2026</span>
+        <span class="no">01 · TEDxSIOUXFALLS 2026</span>
         <h3>Customer Culture</h3>
         <p>Why treating leaders like products to be rated and discarded is producing the leadership failures we keep criticizing — and what it costs the rest of us.</p>
         <a href="#contact">REQUEST THIS TALK →</a>
       </div>
       <div class="talk">
-        <span class="no">ANNUAL · SIOUX FALLS SD</span>
+        <span class="no">02 · TEDxSIOUXFALLS 2019</span>
+        <h3>Low on Leaders</h3>
+        <p>18 minutes on why leaders go alone, and what it costs us. The rock story — what it actually takes to develop leaders in a community that says it wants them.</p>
+        <a href="https://www.youtube.com/@yunghp1" target="_blank" rel="noopener">WATCH THE TALK →</a>
+      </div>
+      <div class="talk">
+        <span class="no">03 · ANNUAL · SIOUX FALLS SD</span>
         <h3>CultureCon</h3>
         <p>Updates, events, and community. The full Think 3D Solutions archive of keynotes and talks.</p>
         <a href="https://www.youtube.com/@think3dsolutions" target="_blank" rel="noopener">WATCH ON YOUTUBE →</a>
@@ -700,11 +712,7 @@ footer .fmono { font-family: var(--mono); font-size: 11.5px; letter-spacing: .1e
     <p class="lead">Maybe it's nothing. Maybe it's their mother's diagnosis. Maybe it's six months without anyone telling them they're doing good work.</p>
     <p class="lead">You'll never know — because you built a system for roles, not people. The teams that outperform? They account for the human being, not just the position.</p>
 
-    <div class="measured">
-      <span class="tick tl">THE QUESTION</span>
-      <blockquote>who is holding them?</blockquote>
-      <span class="tick br">HARIRI</span>
-    </div>
+    <p class="serif-quote">who is holding them?</p>
   </div>
 </section>
 
@@ -715,7 +723,7 @@ footer .fmono { font-family: var(--mono); font-size: 11.5px; letter-spacing: .1e
       <div>
         <span class="eyebrow">About</span>
         <h2>Practitioner first. Speaker second.</h2>
-        <p class="lead">Vaney is a leadership development practitioner and strategic advisor — co-founder of Think 3D Solutions, co-author of <em>Think 3D</em>, and a civic leader who has spent over a decade in confidential one-on-one work with leaders across industries.</p>
+        <p class="lead">Vaney is a leadership development practitioner and strategic advisor — co-founder of Think 3D Solutions, co-author of <cite>Think 3D</cite>, and a civic leader who has spent over a decade in confidential one-on-one work with leaders across industries.</p>
         <p class="muted" style="margin-top: 14px;">The frameworks come from the rooms, not the research stacks. That's the difference your audience hears.</p>
         <div class="credlist">
           <div>
@@ -793,11 +801,7 @@ footer .fmono { font-family: var(--mono); font-size: 11.5px; letter-spacing: .1e
     <p class="lead">You think staying small is humility. It's not.</p>
     <p class="lead">The people who invested in you — their time, their failure, their sleepless nights — they didn't do that so you could play it safe. Your gifts aren't yours to waste.</p>
 
-    <div class="measured">
-      <span class="tick tl">THE WORK</span>
-      <blockquote>We have real problems to solve. We cannot solve them with people hiding from what they're capable of.</blockquote>
-      <span class="tick br">HARIRI</span>
-    </div>
+    <p class="lead" style="font-weight: 700; margin-top: 32px;">We have real problems to solve. We cannot solve them with people hiding from what they're capable of.</p>
   </div>
 </section>
 
@@ -934,7 +938,7 @@ footer .fmono { font-family: var(--mono); font-size: 11.5px; letter-spacing: .1e
 <!-- ===== FOOTER ===== -->
 <footer>
   <div class="wrap">
-    <!-- wordmark-dark from brand kit -->
+    <!-- wordmark-dark from brand kit marks/wordmark-dark.svg -->
     <a href="#" aria-label="Vaney Hariri — back to top">
       <svg width="120" height="34" viewBox="0 0 440 140" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <text x="28" y="86" font-family="'DM Serif Display',serif" font-style="italic" font-size="64" fill="#FAF7F2">V</text>
@@ -942,6 +946,7 @@ footer .fmono { font-family: var(--mono); font-size: 11.5px; letter-spacing: .1e
         <text x="71" y="86" font-family="'DM Serif Display',serif" font-size="40" fill="#FAF7F2">aney Hariri</text>
         <rect x="28" y="102" width="270" height="3" fill="#FAF7F2"/>
         <rect x="28" y="102" width="42" height="3" fill="#E8590C"/>
+        <text x="28" y="132" font-family="'IBM Plex Mono',monospace" font-size="11" letter-spacing="3" fill="#8FA0B0">&#9488; LEADERSHIP &#183; CULTURE &#183; STRATEGY &#9492;</text>
       </svg>
     </a>
     <span class="fmono">KEYNOTE SPEAKER · CULTURE ARCHITECT · AUTHOR · SIOUX FALLS, SD</span>
