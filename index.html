@@ -875,41 +875,11 @@ footer .fmono { font-family: var(--mono); font-size: 11.5px; letter-spacing: .1e
 <section class="band" id="contact">
   <div class="wrap">
     <span class="eyebrow">Booking</span>
-    <h2>Let's Build Something</h2>
-    <p class="lead">If you're building something worth talking about, let's talk.</p>
 
     <div class="contact-grid">
       <!-- Form -->
       <div>
-        <span class="eyebrow" style="display: block; margin-bottom: 16px; color: #8FA0B0;">Keynote &amp; Speaking</span>
-        <p style="color: #B9C2CC; font-size: 16px; margin-bottom: 28px;">Bring Vaney to your stage. Tell us about your event and we'll follow up within 24 hours. No agencies — direct with Vaney.</p>
-
-        <form id="contact-form" action="https://formspree.io/f/xpzgvjqp" method="POST" novalidate>
-          <div class="field">
-            <label for="f-name">Name</label>
-            <input type="text" id="f-name" name="name" placeholder="Your name" required autocomplete="name">
-          </div>
-          <div class="field">
-            <label for="f-org">Organization</label>
-            <input type="text" id="f-org" name="organization" placeholder="Organization" autocomplete="organization">
-          </div>
-          <div class="field">
-            <label for="f-type">Event Type</label>
-            <select id="f-type" name="event_type" required>
-              <option value="" disabled selected>Select event type</option>
-              <option value="Corporate Keynote">Corporate Keynote</option>
-              <option value="Leadership Retreat">Leadership Retreat</option>
-              <option value="Culture Workshop">Culture Workshop</option>
-              <option value="Other">Other</option>
-            </select>
-          </div>
-          <div class="field">
-            <label for="f-message">Tell us more</label>
-            <textarea id="f-message" name="message" placeholder="Event details, dates, audience size..."></textarea>
-          </div>
-          <button type="submit" class="form-btn">Book a Keynote →</button>
-          <p class="form-status" id="form-status" aria-live="polite"></p>
-        </form>
+        <div data-fillout-id="hrFE259f9Pus" data-fillout-embed-type="standard" data-fillout-inherit-parameters data-fillout-dynamic-resize style="width:100%;"></div>
       </div>
 
       <!-- Discovery sidebar -->
@@ -959,34 +929,6 @@ footer .fmono { font-family: var(--mono); font-size: 11.5px; letter-spacing: .1e
   </div>
 </footer>
 
-<script>
-document.getElementById('contact-form').addEventListener('submit', async function (e) {
-  e.preventDefault();
-  const btn = this.querySelector('.form-btn');
-  const status = document.getElementById('form-status');
-  btn.textContent = 'Sending...';
-  btn.disabled = true;
-  try {
-    const res = await fetch(this.action, {
-      method: 'POST',
-      body: new FormData(this),
-      headers: { 'Accept': 'application/json' }
-    });
-    if (res.ok) {
-      this.reset();
-      status.textContent = 'Message received.';
-      btn.textContent = 'Sent.';
-    } else {
-      status.textContent = 'Something went wrong. Please try again or email directly.';
-      btn.textContent = 'Book a Keynote →';
-      btn.disabled = false;
-    }
-  } catch {
-    status.textContent = 'Something went wrong. Please try again or email directly.';
-    btn.textContent = 'Book a Keynote →';
-    btn.disabled = false;
-  }
-});
-</script>
+<script src="https://server.fillout.com/embed/v1/"></script>
 </body>
 </html>
