@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Culture Coach AI — Vaney Hariri · Think 3D</title>
+<meta name="description" content="Culture Coach AI is Think 3D's coaching interface — built to walk you through role play simulations, answer questions inside our frameworks, and give you a version of the coaching conversation, on demand.">
+<link rel="canonical" href="https://vaneyhariri.com/coach">
+<meta name="author" content="Vaney Hariri">
+<meta name="robots" content="index, follow">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://vaneyhariri.com/coach">
+<meta property="og:title" content="Culture Coach AI — Vaney Hariri · Think 3D">
+<meta property="og:description" content="Culture Coach AI walks you through Think 3D's role plays and frameworks — grounded in our real work, not the internet.">
+<meta property="og:site_name" content="Vaney Hariri">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   VANEY HARIRI BRAND SYSTEM v1.2
+   ============================================================ */
+:root {
+  --ink:   #10243E;
+  --deep:  #0A1828;
+  --bone:  #FAF7F2;
+  --ember: #E8590C;
+  --slate: #5B6B7C;
+  --line:  #D8D2C8;
+  --mono:  'IBM Plex Mono', monospace;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+body {
+  background: var(--bone);
+  color: var(--ink);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+a { color: inherit; }
+img { display: block; max-width: 100%; }
+
+/* --- SPINE --- */
+.spine {
+  position: fixed;
+  left: 0; top: 0; bottom: 0;
+  width: 6px;
+  background: var(--ink);
+  z-index: 50;
+}
+.spine::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 16vh;
+  background: var(--ember);
+}
+
+/* --- LAYOUT --- */
+.wrap { max-width: 1040px; margin: 0 auto; padding: 0 32px; }
+
+/* --- TYPE --- */
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--ember);
+  font-weight: 500;
+}
+h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(30px, 4vw, 42px);
+  font-weight: 400;
+  line-height: 1.15;
+  margin: 14px 0 18px;
+  max-width: 22ch;
+}
+.lead { font-size: 18px; max-width: 62ch; }
+.muted { color: var(--slate); }
+p + p { margin-top: 14px; }
+
+/* --- NAV --- */
+nav {
+  position: sticky;
+  top: 0;
+  background: rgba(10, 24, 40, .96);
+  backdrop-filter: blur(8px);
+  z-index: 40;
+  border-bottom: 1px solid #1C3450;
+}
+nav .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 68px;
+}
+.navmark svg { display: block; }
+nav ul { display: flex; gap: 30px; list-style: none; }
+nav a {
+  color: #B9C2CC;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: .03em;
+}
+nav a:hover, nav a:focus-visible { color: var(--bone); }
+nav a.active { color: var(--bone); }
+nav a.cta {
+  color: var(--bone);
+  border: 1px solid var(--ember);
+  padding: 8px 16px;
+}
+nav a.cta:hover { background: var(--ember); }
+@media (max-width: 740px) { nav ul li:not(:last-child) { display: none; } }
+
+/* --- HERO --- */
+.hero {
+  background: var(--deep);
+  color: var(--bone);
+  padding: 110px 0 90px;
+  position: relative;
+  overflow: hidden;
+}
+.hero .wrap { position: relative; }
+.hero h1 {
+  font-family: 'DM Serif Display', serif;
+  font-weight: 400;
+  font-size: clamp(42px, 6.5vw, 74px);
+  line-height: 1.05;
+  max-width: 16ch;
+  margin: 20px 0 26px;
+}
+.hero h1 .heat { color: var(--ember); font-style: italic; }
+.hero .hero-sub { font-size: 20px; color: #B9C2CC; max-width: 560px; }
+.hero .hero-body { font-size: 17px; color: #8FA0B0; max-width: 560px; margin-top: 10px; }
+.hero .actions { margin-top: 40px; display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 15px;
+  padding: 15px 28px;
+  letter-spacing: .02em;
+}
+.btn.primary { background: var(--ember); color: #fff; }
+.btn.primary:hover { background: #CF4E0A; }
+.btn.ghost { border: 1px solid #3A506B; color: var(--bone); }
+.btn.ghost:hover { border-color: var(--bone); }
+.hero .note {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: #5B6B7C;
+  letter-spacing: .1em;
+}
+.hero .wm {
+  position: absolute;
+  right: -40px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: .07;
+  pointer-events: none;
+}
+
+/* --- SECTIONS --- */
+section { padding: 96px 0; }
+section.alt {
+  background: #fff;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+/* --- MEASURED QUOTE --- */
+.measured {
+  position: relative;
+  margin: 56px auto;
+  padding: 34px 38px;
+  border-left: 3px solid var(--ember);
+  max-width: 760px;
+}
+.measured blockquote {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(22px, 3vw, 30px);
+  line-height: 1.35;
+  font-style: italic;
+}
+.measured .tick {
+  position: absolute;
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--slate);
+  letter-spacing: .1em;
+}
+.measured .tick.tl { top: -9px; left: 0; }
+.measured .tick.br { bottom: -9px; right: 0; }
+.measured .tick::before { content: '┐ '; color: var(--ember); }
+.measured .tick.br::before { content: '└ '; }
+
+/* --- PROMPT GRID --- */
+.prompt-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  margin-top: 44px;
+}
+.prompt-card {
+  background: var(--bone);
+  padding: 28px 26px;
+  text-decoration: none;
+  display: block;
+  transition: background .2s;
+  position: relative;
+}
+.prompt-card:hover { background: #fff; }
+.prompt-card:hover .prompt-arrow { color: var(--ember); }
+.prompt-no {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--ember);
+  letter-spacing: .14em;
+  margin-bottom: 12px;
+}
+.prompt-card p {
+  font-size: 16px;
+  color: var(--ink);
+  line-height: 1.5;
+  font-weight: 500;
+  max-width: 36ch;
+}
+.prompt-arrow {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: .08em;
+  color: var(--slate);
+  display: inline-block;
+  margin-top: 14px;
+  transition: color .2s;
+}
+
+/* --- HOW IT WORKS --- */
+.how-list {
+  margin-top: 44px;
+  border-top: 2px solid var(--ink);
+}
+.how-item {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  gap: 24px;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--line);
+  align-items: start;
+}
+.how-num {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--ember);
+  letter-spacing: .14em;
+  padding-top: 4px;
+}
+.how-item h3 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 6px;
+}
+.how-item p { font-size: 15px; color: var(--slate); }
+
+/* --- DARK BAND CTA --- */
+.band {
+  background: var(--deep);
+  color: var(--bone);
+  padding: 100px 0;
+  text-align: center;
+}
+.band h2 { color: var(--bone); max-width: 26ch; margin: 14px auto 0; }
+.band .lead { color: #B9C2CC; max-width: 54ch; margin: 0 auto; }
+.band .actions {
+  margin-top: 40px;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.band .note {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: #5B6B7C;
+  letter-spacing: .1em;
+}
+
+/* --- FOOTER --- */
+footer {
+  background: var(--deep);
+  color: #5B6B7C;
+  border-top: 1px solid #1C3450;
+  padding: 44px 0;
+}
+footer .wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+footer .fmono { font-family: var(--mono); font-size: 11.5px; letter-spacing: .1em; }
+.footer-links { display: flex; gap: 22px; flex-wrap: wrap; }
+.footer-links a { color: #8FA0B0; text-decoration: none; font-size: 13.5px; }
+.footer-links a:hover { color: var(--bone); }
+</style>
+</head>
+<body>
+<div class="spine" aria-hidden="true"></div>
+
+<!-- ===== NAV ===== -->
+<nav>
+  <div class="wrap">
+    <a class="navmark" href="/" aria-label="Vaney Hariri — home">
+      <svg width="148" height="40" viewBox="0 0 440 140" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <text x="28" y="86" font-family="'DM Serif Display',serif" font-style="italic" font-size="64" fill="#FAF7F2">V</text>
+        <circle cx="59" cy="85" r="3.2" fill="#E8590C"/>
+        <text x="71" y="86" font-family="'DM Serif Display',serif" font-size="40" fill="#FAF7F2">aney Hariri</text>
+        <rect x="28" y="102" width="270" height="3" fill="#FAF7F2"/>
+        <rect x="28" y="102" width="42" height="3" fill="#E8590C"/>
+        <text x="28" y="132" font-family="'IBM Plex Mono',monospace" font-size="11" letter-spacing="3" fill="#8FA0B0">&#9488; LEADERSHIP &#183; CULTURE &#183; STRATEGY &#9492;</text>
+      </svg>
+    </a>
+    <ul>
+      <li><a href="/#talks">Keynotes</a></li>
+      <li><a href="/#about">About</a></li>
+      <li><a href="/#media">Media</a></li>
+      <li><a href="/coach" class="active">Culture Coach AI</a></li>
+      <li><a class="cta" href="/#contact">Book Vaney</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<header class="hero">
+  <svg class="wm" width="520" height="520" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <text x="8" y="78" font-family="'DM Serif Display',serif" font-style="italic" font-size="74" fill="#FAF7F2">V</text>
+    <circle cx="41" cy="77" r="4.5" fill="#E8590C"/>
+    <text x="52" y="100" font-family="'DM Serif Display',serif" font-size="74" fill="#FAF7F2">H</text>
+  </svg>
+  <div class="wrap">
+    <span class="eyebrow">Culture Coach AI · Think 3D</span>
+    <h1>The coaching conversation. <span class="heat">On demand.</span></h1>
+    <p class="hero-sub">Built on Think 3D's real body of work — not the internet.</p>
+    <p class="hero-body">Ask questions inside our frameworks. Work through role play simulations. Get a version of the coaching conversation when Vaney isn't in the room.</p>
+    <div class="actions">
+      <a class="btn primary" href="https://chatgpt.com/g/g-6a46092a33308191a63482c233d443e7-vaney-hariri-culture-coach-ai" target="_blank" rel="noopener">Open Culture Coach AI →</a>
+      <span class="note">Opens in ChatGPT · Free to use</span>
+    </div>
+  </div>
+</header>
+
+<!-- ===== WHAT THIS IS ===== -->
+<section id="about">
+  <div class="wrap">
+    <span class="eyebrow">AI Authenticity</span>
+    <h2>It references what we've built. It doesn't invent.</h2>
+    <p class="lead">Culture Coach AI is Think 3D's coaching interface — built to walk you through role play simulations, answer questions inside our frameworks, and give you a version of the coaching conversation, on demand.</p>
+
+    <p class="lead" style="margin-top: 18px;">Here's the distinction that matters: this isn't AI pulling from the internet. Every response is grounded in Think 3D's own body of work — the frameworks, the language, the coaching method you've already experienced with us, or would experience as a client.</p>
+
+    <div class="measured">
+      <span class="tick tl">AI AUTHENTICITY</span>
+      <blockquote>AI's job here isn't to think for you. It's to reference what we've already built — responsibly, and only from our own knowledge base.</blockquote>
+      <span class="tick br">VANEY HARIRI · THINK 3D</span>
+    </div>
+
+    <p class="lead">If you know Think 3D, you'll recognize it. If you don't yet, this is an honest preview of it. What you get is supportive and supplementary — never a replacement for the real thing.</p>
+  </div>
+</section>
+
+<!-- ===== PROMPTS ===== -->
+<section class="alt" id="try">
+  <div class="wrap">
+    <span class="eyebrow">Try It</span>
+    <h2>Start with one of these — or bring your own.</h2>
+    <p class="lead">Click any prompt below to open it directly in Culture Coach AI.</p>
+
+    <div class="prompt-grid">
+      <a class="prompt-card" href="https://chatgpt.com/g/g-6a46092a33308191a63482c233d443e7-vaney-hariri-culture-coach-ai" target="_blank" rel="noopener">
+        <div class="prompt-no">01 · HARD CONVERSATION</div>
+        <p>I have a difficult conversation I need to have. Help me practice it.</p>
+        <span class="prompt-arrow">TRY THIS →</span>
+      </a>
+      <a class="prompt-card" href="https://chatgpt.com/g/g-6a46092a33308191a63482c233d443e7-vaney-hariri-culture-coach-ai" target="_blank" rel="noopener">
+        <div class="prompt-no">02 · TEAM CULTURE</div>
+        <p>What does Think 3D say about building a strong team culture?</p>
+        <span class="prompt-arrow">TRY THIS →</span>
+      </a>
+      <a class="prompt-card" href="https://chatgpt.com/g/g-6a46092a33308191a63482c233d443e7-vaney-hariri-culture-coach-ai" target="_blank" rel="noopener">
+        <div class="prompt-no">03 · AVOIDANCE</div>
+        <p>I know what I should do but I keep avoiding it. Help me think through why.</p>
+        <span class="prompt-arrow">TRY THIS →</span>
+      </a>
+      <a class="prompt-card" href="https://chatgpt.com/g/g-6a46092a33308191a63482c233d443e7-vaney-hariri-culture-coach-ai" target="_blank" rel="noopener">
+        <div class="prompt-no">04 · STRATEGY</div>
+        <p>Walk me through The Next Chapter strategic planning framework.</p>
+        <span class="prompt-arrow">TRY THIS →</span>
+      </a>
+      <a class="prompt-card" href="https://chatgpt.com/g/g-6a46092a33308191a63482c233d443e7-vaney-hariri-culture-coach-ai" target="_blank" rel="noopener">
+        <div class="prompt-no">05 · DISENGAGED TEAM</div>
+        <p>I have a team member who's checked out. What do I do?</p>
+        <span class="prompt-arrow">TRY THIS →</span>
+      </a>
+      <a class="prompt-card" href="https://chatgpt.com/g/g-6a46092a33308191a63482c233d443e7-vaney-hariri-culture-coach-ai" target="_blank" rel="noopener">
+        <div class="prompt-no">06 · FRAMEWORK</div>
+        <p>What's the difference between an attribute, an ability, and a skill?</p>
+        <span class="prompt-arrow">TRY THIS →</span>
+      </a>
+      <a class="prompt-card" href="https://chatgpt.com/g/g-6a46092a33308191a63482c233d443e7-vaney-hariri-culture-coach-ai" target="_blank" rel="noopener">
+        <div class="prompt-no">07 · INFLUENCE</div>
+        <p>How do I get people to actually follow me, not just report to me?</p>
+        <span class="prompt-arrow">TRY THIS →</span>
+      </a>
+      <a class="prompt-card" href="https://chatgpt.com/g/g-6a46092a33308191a63482c233d443e7-vaney-hariri-culture-coach-ai" target="_blank" rel="noopener">
+        <div class="prompt-no">08 · FEAR</div>
+        <p>I'm afraid to make a move. Help me think through it.</p>
+        <span class="prompt-arrow">TRY THIS →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== HOW IT WORKS ===== -->
+<section id="how">
+  <div class="wrap">
+    <span class="eyebrow">How It Works</span>
+    <h2>Straightforward by design.</h2>
+
+    <div class="how-list">
+      <div class="how-item">
+        <span class="how-num">01</span>
+        <div>
+          <h3>Click "Open Culture Coach AI"</h3>
+          <p>The link opens ChatGPT in a new tab. No app to download. No account required to read — a free ChatGPT account lets you have a full conversation.</p>
+        </div>
+      </div>
+      <div class="how-item">
+        <span class="how-num">02</span>
+        <div>
+          <h3>Ask anything inside Think 3D's work</h3>
+          <p>Role play simulations. Framework questions. Hard conversation prep. Strategic planning. The AI draws only from Think 3D's real body of work — not the internet.</p>
+        </div>
+      </div>
+      <div class="how-item">
+        <span class="how-num">03</span>
+        <div>
+          <h3>It evolves as we do</h3>
+          <p>As Think 3D develops new frameworks and client insights, the knowledge base gets updated. What you get today reflects real client work — and tomorrow will reflect more of it.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA BAND ===== -->
+<section class="band">
+  <div class="wrap">
+    <span class="eyebrow">Ready When You Are</span>
+    <h2>The conversation is already built. You just have to start it.</h2>
+    <p class="lead" style="margin-top: 18px;">Culture Coach AI is live, free to use, and grounded entirely in Think 3D's own work. No fluff. No filler. Just the frameworks.</p>
+    <div class="actions">
+      <a class="btn primary" href="https://chatgpt.com/g/g-6a46092a33308191a63482c233d443e7-vaney-hariri-culture-coach-ai" target="_blank" rel="noopener">Open Culture Coach AI →</a>
+      <span class="note">Opens in ChatGPT · Free to use</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="wrap">
+    <a href="/" aria-label="Vaney Hariri — back to home">
+      <svg width="120" height="34" viewBox="0 0 440 140" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <text x="28" y="86" font-family="'DM Serif Display',serif" font-style="italic" font-size="64" fill="#FAF7F2">V</text>
+        <circle cx="59" cy="85" r="3.2" fill="#E8590C"/>
+        <text x="71" y="86" font-family="'DM Serif Display',serif" font-size="40" fill="#FAF7F2">aney Hariri</text>
+        <rect x="28" y="102" width="270" height="3" fill="#FAF7F2"/>
+        <rect x="28" y="102" width="42" height="3" fill="#E8590C"/>
+        <text x="28" y="132" font-family="'IBM Plex Mono',monospace" font-size="11" letter-spacing="3" fill="#8FA0B0">&#9488; LEADERSHIP &#183; CULTURE &#183; STRATEGY &#9492;</text>
+      </svg>
+    </a>
+    <span class="fmono">KEYNOTE SPEAKER · CULTURE ARCHITECT · AUTHOR · SIOUX FALLS, SD</span>
+    <div class="footer-links">
+      <a href="/">vaneyhariri.com</a>
+      <a href="https://letsthink3d.com" target="_blank" rel="noopener">Think 3D Solutions</a>
+      <a href="https://www.linkedin.com/in/vaney/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+    <span class="fmono" style="color: #3A506B;">© 2026 VANEY HARIRI. ALL RIGHTS RESERVED.</span>
+  </div>
+</footer>
+
+</body>
+</html>
