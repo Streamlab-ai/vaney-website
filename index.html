@@ -331,11 +331,14 @@ section.alt {
 .talk a:hover { color: var(--ember); border-color: var(--ember); }
 
 /* --- VIDEO EMBEDS --- */
+.video-featured {
+  margin-top: 56px;
+}
 .video-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 24px;
-  margin-top: 56px;
+  margin-top: 24px;
 }
 @media (max-width: 680px) { .video-grid { grid-template-columns: 1fr; } }
 .video-wrap {
@@ -740,6 +743,19 @@ footer .fmono { font-family: var(--mono); font-size: 11.5px; letter-spacing: .1e
         <p>Updates, events, and community. The full Think 3D Solutions archive of keynotes and talks.</p>
         <a href="https://www.youtube.com/@think3dsolutions" target="_blank" rel="noopener">WATCH ON YOUTUBE →</a>
       </div>
+    </div>
+
+    <div class="video-featured">
+      <div class="video-wrap">
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/Jej8m__NJnc?rel=0&modestbranding=1&color=white"
+          title="Vaney Hariri — TEDxSiouxFalls 2026: The Problem with Leadership Culture Today"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+          loading="lazy">
+        </iframe>
+      </div>
+      <p class="video-label">TEDXSIOUXFALLS 2026 · THE PROBLEM WITH LEADERSHIP CULTURE TODAY</p>
     </div>
 
     <div class="video-grid">
