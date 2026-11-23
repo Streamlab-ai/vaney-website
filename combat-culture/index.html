@@ -1,0 +1,489 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Combat Culture is a personal development retreat at Culture Cove in Meckling, South Dakota. Practice responding to pressure through guided movement and reflection, December 4–6, 2026.">
+<meta property="og:title" content="Combat Culture Retreat · December 4–6, 2026">
+<meta property="og:description" content="A different way to practice handling pressure. At Culture Cove, Meckling, SD. No boxing experience needed.">
+<title>Combat Culture Retreat · December 4–6, 2026 · Culture Cove</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Fragment+Mono:ital@0;1&display=swap">
+<style>
+/* Layout: single narrative column on near-black. Culture Cove tokens taken from the live theme CSS.
+   Ripple StoryBrand order, with the walk-in / walk-out bridge between problem and plan.
+   One bold moment: the credo panel. */
+:root{
+  --bg:#0b0b0d; --surface:#131317; --surface-2:#1c1c22; --border:#1c1c22;
+  --ink:#f6f6f8; --ink-2:#a3a3ad; --ink-3:#6f6f7a;
+  --accent:#a4dcf1; --accent-deep:#196bb4; --signal:#e8a33d; --loss:#c96a5a;
+  --font-body:"Jost",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --font-mono:"Fragment Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --maxw:1180px; --measure:64ch; --radius:14px; --pill:999px;
+  color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:var(--maxw);margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+section{border-top:1px solid var(--border)}
+section>.wrap{padding-block:clamp(3rem,6vw,5.5rem)}
+h1,h2,h3{text-wrap:balance;margin:0;font-weight:600;letter-spacing:-.02em}
+h1{font-size:clamp(2.1rem,6.2vw,4.1rem);line-height:1.03;font-weight:700}
+h2{font-size:clamp(1.55rem,3.4vw,2.35rem);line-height:1.12}
+h3{font-size:1.1rem;line-height:1.3}
+p{margin:0;max-width:var(--measure)}
+.eyebrow{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin:0 0 1.1rem}
+.lede{font-size:clamp(1.1rem,2.1vw,1.3rem);color:var(--ink-2);line-height:1.5}
+.stack{display:flex;flex-direction:column;gap:1.1rem}
+.muted{color:var(--ink-2)} .dim{color:var(--ink-3)}
+a{color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+img{display:block;max-width:100%}
+
+/* hero */
+.hero{border-top:0;background-color:#0b0b0d;background-image:linear-gradient(180deg,rgba(11,11,13,.55) 0%,rgba(11,11,13,.35) 40%,rgba(11,11,13,.94) 100%),url("img/hero.jpeg");background-size:cover;background-position:center}
+.hero>.wrap{padding-block:clamp(3.2rem,8vw,6.5rem)}
+.mascot{width:clamp(74px,11vw,112px);margin-bottom:1.6rem}
+.badges{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.8rem}
+.badge{font-family:var(--font-mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2);border:1px solid rgba(255,255,255,.14);background:rgba(11,11,13,.5);border-radius:var(--pill);padding:.42rem .85rem}
+.hero h1{margin-bottom:1.1rem;max-width:18ch}
+.tagline{font-family:var(--font-mono);font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:1.3rem;max-width:40ch}
+.meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-top:2.6rem}
+.meta div{background:rgba(19,19,23,.92);padding:1.1rem 1.2rem;min-width:0}
+.meta dt{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);margin-bottom:.4rem}
+.meta dd{margin:0;font-size:1.12rem;font-weight:500;font-variant-numeric:tabular-nums}
+
+/* cta */
+.cta{display:inline-flex;align-items:baseline;gap:.35rem;background:var(--accent);color:#0b0b0d;font-size:1.02rem;font-weight:600;text-decoration:none;border-radius:var(--pill);padding:.95rem 1.9rem;border:0;cursor:pointer}
+.cta:hover{background:#c2e8f7}
+.cta sup{font-size:.72em;font-weight:700}
+.cta-note{font-family:var(--font-mono);font-size:.74rem;color:var(--ink-3);margin-top:.8rem;max-width:none}
+.cta-row{display:flex;flex-direction:column;align-items:flex-start;margin-top:2rem}
+
+/* problem */
+.probs{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:1.6rem;margin-top:2.6rem}
+.prob{min-width:0;border-left:2px solid var(--surface-2);padding-left:1.3rem}
+.prob:last-child{border-left-color:var(--loss)}
+.prob h3{margin-bottom:.6rem}
+.prob p{color:var(--ink-2);font-size:.97rem;max-width:none}
+
+/* walk in / walk out */
+.bridge{background:var(--surface)}
+.bridge-head{display:grid;grid-template-columns:1fr 2.5rem 1fr;gap:1rem;margin-top:2.4rem;padding-bottom:.9rem;border-bottom:1px solid var(--border)}
+.bridge-head span{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase}
+.bridge-head .in{color:var(--loss)} .bridge-head .out{color:var(--accent)}
+.swap{display:grid;grid-template-columns:1fr 2.5rem 1fr;gap:1rem;align-items:center;padding:1.15rem 0;border-bottom:1px solid var(--border)}
+.swap .in{color:var(--ink-3);font-size:.99rem;min-width:0}
+.swap .out{color:var(--ink);font-size:.99rem;font-weight:500;min-width:0}
+.swap .arr{font-family:var(--font-mono);color:var(--accent);text-align:center;font-size:1rem}
+@media(max-width:620px){
+  .bridge-head{display:none}
+  .swap{grid-template-columns:1fr;gap:.45rem;padding:1.3rem 0}
+  .swap .in::before{content:"Notice";display:block;font-family:var(--font-mono);font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:var(--loss);margin-bottom:.25rem}
+  .swap .out::before{content:"Practice";display:block;font-family:var(--font-mono);font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:.25rem}
+  .swap .arr{display:none}
+}
+
+/* credo */
+.credo{background-color:#0d3f6c;background-image:linear-gradient(160deg,rgba(25,107,180,.92),rgba(11,11,13,.88)),url("img/space-gym.webp");background-size:cover;background-position:center;border-top:1px solid var(--accent-deep)}
+.credo>.wrap{padding-block:clamp(3.6rem,7vw,6rem)}
+.credo .eyebrow{color:#a4dcf1}
+blockquote.oath{margin:0;font-size:clamp(1.18rem,2.7vw,1.72rem);line-height:1.46;font-style:italic;font-weight:400;max-width:34ch;color:#fff}
+.credo cite{display:block;margin-top:1.8rem;font-family:var(--font-mono);font-size:.74rem;font-style:normal;letter-spacing:.1em;text-transform:uppercase;color:#a4dcf1}
+
+/* method */
+.method-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:2.6rem;align-items:center;margin-top:2.4rem}
+@media(max-width:760px){.method-grid{grid-template-columns:1fr;gap:1.8rem}}
+.method-grid img{border-radius:var(--radius);width:100%;height:100%;max-height:420px;object-fit:cover}
+.pair{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+.pair>div{background:var(--surface);padding:1.7rem 1.6rem;min-width:0}
+.pair h3{color:var(--accent);margin-bottom:.7rem;font-family:var(--font-mono);font-size:.78rem;letter-spacing:.1em;text-transform:uppercase}
+.pair p{font-size:1.02rem;max-width:none;color:var(--ink-2)}
+.pair strong{color:var(--ink);font-weight:500}
+
+/* the room gallery */
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:1rem;margin-top:2.4rem}
+figure.shot{margin:0;min-width:0;border-radius:var(--radius);overflow:hidden;background:var(--surface);border:1px solid var(--border)}
+figure.shot img{width:100%;aspect-ratio:4/3;object-fit:cover}
+figure.shot figcaption{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);padding:.8rem 1rem}
+
+/* guide */
+.guide-grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:2.6rem;align-items:start}
+@media(max-width:720px){.guide-grid{grid-template-columns:1fr}}
+.creds{list-style:none;margin:1.6rem 0 0;padding:0;display:flex;flex-direction:column;gap:.7rem}
+.creds li{padding-left:1.4rem;position:relative;color:var(--ink-2);font-size:.99rem}
+.creds li::before{content:"";position:absolute;left:0;top:.62em;width:7px;height:7px;border-radius:50%;background:var(--accent)}
+.receipt{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem}
+figure.portrait{margin:0;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);background:var(--surface)}
+figure.portrait img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center top;filter:grayscale(1) contrast(1.05)}
+figure.portrait figcaption{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.08em;color:var(--ink-3);padding:.8rem 1rem;line-height:1.4}
+.receipt .num{font-size:2.5rem;font-weight:700;line-height:1;font-variant-numeric:tabular-nums}
+.receipt p{font-size:.9rem;color:var(--ink-2);margin-top:.6rem;max-width:none}
+
+/* plan */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:1.8rem;margin-top:2.6rem;counter-reset:s}
+.step{min-width:0}
+.step::before{counter-increment:s;content:counter(s);display:block;font-family:var(--font-mono);font-size:.8rem;color:var(--accent);margin-bottom:.8rem}
+.step h3{font-size:1.35rem;margin-bottom:.35rem}
+.step p{color:var(--ink-2);font-size:.95rem;max-width:none}
+
+/* offer */
+.offer{background:var(--surface)}
+.price{display:flex;align-items:baseline;gap:.7rem;margin:1.2rem 0 .3rem}
+.price .amt{font-size:clamp(2.6rem,7vw,3.9rem);font-weight:700;line-height:1;font-variant-numeric:tabular-nums}
+.price .per{color:var(--ink-3);font-family:var(--font-mono);font-size:.82rem}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(285px,1fr));gap:2.4rem;margin-top:2.8rem}
+.col{min-width:0}
+.col>h3{font-family:var(--font-mono);font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);padding-bottom:.9rem;border-bottom:1px solid var(--border);margin-bottom:1.3rem}
+.rows{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:1.15rem}
+.rows li{min-width:0}
+.rows b{display:block;font-weight:600;font-size:1rem;margin-bottom:.22rem}
+.rows span{display:block;color:var(--ink-2);font-size:.92rem;line-height:1.5}
+
+/* proof */
+.stars{display:flex;align-items:baseline;gap:.9rem;flex-wrap:wrap;margin-bottom:.4rem}
+.stars .big{font-size:2.6rem;font-weight:700;line-height:1;font-variant-numeric:tabular-nums}
+.glyph{color:var(--signal);font-size:1.2rem;letter-spacing:.14em}
+.quotes{display:grid;grid-template-columns:repeat(auto-fit,minmax(275px,1fr));gap:1.5rem;margin-top:2.4rem}
+figure.q{margin:0;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;min-width:0;display:flex;flex-direction:column;gap:1rem}
+figure.q blockquote{margin:0;font-size:.98rem;line-height:1.56;color:var(--ink)}
+figure.q figcaption{font-family:var(--font-mono);font-size:.73rem;letter-spacing:.05em;color:var(--ink-3);margin-top:auto}
+figure.q figcaption b{display:block;color:var(--accent);font-weight:400;letter-spacing:.08em;text-transform:uppercase;font-size:.7rem;margin-bottom:.2rem}
+.logos{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:2.4rem;align-items:center}
+.logo{font-family:var(--font-mono);font-size:.76rem;color:var(--ink-2);border:1px dashed var(--surface-2);border-radius:6px;padding:.75rem 1.05rem;background:var(--surface)}
+.hgtv{margin-top:2.2rem;display:flex;flex-wrap:wrap;gap:.9rem;align-items:center;font-size:.95rem;color:var(--ink-2)}
+
+/* faq */
+details{border-bottom:1px solid var(--border)}
+details summary{cursor:pointer;padding:1.15rem 0;font-weight:500;font-size:1.02rem;list-style:none;display:flex;justify-content:space-between;gap:1rem;align-items:baseline}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:"+";font-family:var(--font-mono);color:var(--accent);flex:none}
+details[open] summary::after{content:"\2013"}
+details .ans{padding:0 0 1.3rem;color:var(--ink-2);font-size:.96rem}
+.faq{margin-top:2rem;border-top:1px solid var(--border)}
+
+/* logistics */
+.logi{display:grid;grid-template-columns:repeat(auto-fit,minmax(165px,1fr));gap:1.6rem;margin-top:2.2rem}
+.logi div{min-width:0}
+.logi dt{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);margin-bottom:.4rem}
+.logi dd{margin:0;font-size:1rem}
+
+/* close */
+.close{background-color:#0b0b0d;background-image:linear-gradient(180deg,rgba(11,11,13,.88) 0%,rgba(11,11,13,.96) 100%),url("img/space-sitting.webp");background-size:cover;background-position:center}
+.close>.wrap{padding-block:clamp(3.6rem,7vw,6rem)}
+.close .ask{font-size:clamp(1.3rem,3.2vw,2rem);font-weight:600;line-height:1.24;max-width:30ch;margin-bottom:1.6rem;text-wrap:balance}
+.losses{list-style:none;margin:2rem 0 0;padding:0;display:flex;flex-direction:column;gap:.9rem;max-width:62ch}
+.losses li{padding-left:1.7rem;position:relative;color:var(--ink-2);font-size:1rem}
+.losses li::before{content:"\2715";position:absolute;left:0;top:.05em;color:var(--loss);font-size:.85rem}
+.reserve{background:var(--surface)}
+footer{border-top:1px solid var(--border)}
+footer>.wrap{padding-block:2rem;font-family:var(--font-mono);font-size:.74rem;color:var(--ink-3);display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;align-items:center}
+footer img{width:96px;opacity:.6}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+/* Schedule and release-ready responsive safeguards */
+.agenda{background:var(--surface)}
+.agenda-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.25rem;margin-top:2.4rem}
+.agenda-card{min-width:0;background:var(--bg);border:1px solid var(--surface-2);border-radius:var(--radius);padding:1.5rem}
+.agenda-card .eyebrow{margin-bottom:.5rem}
+.agenda-card h3{margin-bottom:1rem}
+.agenda-card dt{font-size:.94rem;font-weight:600;margin-top:.8rem}
+.agenda-card dd{margin:.22rem 0 0;color:var(--ink-2);font-size:.92rem;line-height:1.5}
+.price{flex-wrap:wrap}.price del{font-size:1.1rem;color:var(--ink-2)}
+@media(max-width:780px){.agenda-grid{grid-template-columns:1fr}.agenda-card{padding:1.15rem}}
+@media(max-width:430px){.probs,.cols,.pair,.gallery,.steps,.quotes,.logi{grid-template-columns:minmax(0,1fr)}.meta{grid-template-columns:repeat(2,minmax(0,1fr))}.price{column-gap:.6rem}.hero>.wrap{padding-block:2.6rem}.cta{max-width:100%}}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <img class="mascot" src="img/bison-stars.webp" alt="Combat Culture bison and stars mark">
+    <div class="badges">
+      <span class="badge">Culture Cove &middot; Meckling, SD</span>
+      <span class="badge">No boxing experience needed</span>
+    </div>
+    <p class="eyebrow" style="margin-bottom:.9rem">Culture Cove &middot; Three-day retreat</p>
+    <h1>Combat Culture: Practice how you respond under pressure.</h1>
+    <p class="tagline">A different kind of retreat.</p>
+    <p class="lede">You put off the hard conversation, go quiet when things get tense, then replay it at home. At Culture Cove, use guided movement and reflection to notice your response and practice a different one. Come on your own or with colleagues.</p>
+    <dl class="meta">
+      <div><dt>Dates</dt><dd>Dec 4 &ndash; 6, 2026</dd></div>
+      <div><dt>Starts</dt><dd>11:00 AM CST</dd></div>
+      <div><dt>Per seat</dt><dd>$899</dd></div>
+      <div><dt>Included</dt><dd>Meals &amp; lodging</dd></div>
+      <div><dt>Booking</dt><dd>Check availability</dd></div>
+    </dl>
+    <div class="cta-row">
+      <a class="cta cohort-link" href="https://culture-cove-booking.letsthink3d.com/combat-culture-cohorts">See December cohort and register</a>
+      <p class="cta-note">Check availability on the official Culture Cove booking page.</p>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow">The real problem</p>
+    <h2>The pressure doesn’t stay at work.</h2>
+    <p class="lede" style="margin-top:1rem">If the way you respond stays the same, so does the conversation you keep avoiding.</p>
+    <div class="probs">
+      <div class="prob"><h3>You put off the hard talk.</h3><p>You know what needs saying. Another week goes by, and your team is left guessing.</p></div>
+      <div class="prob"><h3>You go quiet when it gets tense.</h3><p>You have something useful to say, but by the time you find the words, the meeting is over.</p></div>
+      <div class="prob"><h3>You bring it home.</h3><p>The conversation ended hours ago. You’re still thinking about what you could have said.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="bridge">
+  <div class="wrap">
+    <p class="eyebrow">The three days</p>
+    <h2>Notice the pattern. Practice a different response.</h2>
+    <p class="lede" style="margin-top:1rem">What you can work on over the weekend and bring back to a real conversation.</p>
+
+    <div class="bridge-head">
+      <span class="in">Notice</span><span></span><span class="out">Practice</span>
+    </div>
+
+    <div class="swap">
+      <div class="in">A hard conversation you keep putting off.</div><div class="arr">&rarr;</div><div class="out">Name the thing you need to say and choose a way to start.</div>
+    </div>
+    <div class="swap">
+      <div class="in">Going quiet as soon as the room gets tense.</div><div class="arr">&rarr;</div><div class="out">Notice when you shut down and practice staying in the conversation.</div>
+    </div>
+    <div class="swap">
+      <div class="in">Replaying work long after you’ve gone home.</div><div class="arr">&rarr;</div><div class="out">Separate what already happened from what you can do next.</div>
+    </div>
+    <div class="swap">
+      <div class="in">A good idea that rarely makes it back into the week.</div><div class="arr">&rarr;</div><div class="out">Pick one moment you’ll handle differently after the retreat.</div>
+    </div>
+
+    <div class="cta-row">
+      <a class="cta cohort-link" href="https://culture-cove-booking.letsthink3d.com/combat-culture-cohorts">See December cohort and register</a>
+      <p class="cta-note">Check availability on the official Culture Cove booking page.</p>
+    </div>
+  </div>
+</section>
+
+<section class="credo">
+  <div class="wrap">
+    <p class="eyebrow">The credo</p>
+    <blockquote class="oath">Changing how we show up takes the curiosity to learn, the generosity to help someone else, and the willingness to be uncomfortable.</blockquote>
+    <cite>Inspired by the Combat Culture credo</cite>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow">The method</p>
+    <h2>Three days built on one distinction.</h2>
+    <p class="lede" style="margin-top:1rem">The gym and the lodge work together. A guided physical challenge gives you something real to notice. In the lodge, you talk through where the same response shows up at work or at home.</p>
+    <div class="method-grid">
+      <div class="pair">
+        <div>
+          <h3>A wall</h3>
+          <p>External, static, defensive. You build it to keep people out and it ends up keeping you in. Under pressure you cover up and retreat. <strong>The room gets smaller.</strong></p>
+        </div>
+        <div>
+          <h3>A boundary that travels</h3>
+          <p>Not something you build. It is what you can handle, so it goes where you go. Under pressure you hold your ground and move. <strong>The room stays yours.</strong></p>
+        </div>
+      </div>
+      <img src="img/space-gym.webp" alt="The training floor and boxing ring at Culture Cove">
+    </div>
+    <div class="stack" style="margin-top:2.4rem">
+      <p class="muted">Leading people means being firm and warm at the same time, without giving up either one. That is the hard part. Three days of practice is how it starts to stick.</p>
+      <p class="muted">No boxing experience is required. You choose your intensity. The aim is to notice what you do when you feel uncomfortable, then choose one way to respond differently next time.</p>
+    </div>
+    <div class="cta-row">
+      <a class="cta cohort-link" href="https://culture-cove-booking.letsthink3d.com/combat-culture-cohorts">See December cohort and register</a>
+      <p class="cta-note">Check availability on the official Culture Cove booking page.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow">The room</p>
+    <h2>A private facility built for the work.</h2>
+    <p class="lede" style="margin-top:1rem">A renovated hunting lodge in Meckling with a training floor, full kitchen, lounge and quiet rooms. The retreat moves between the gym and the lodge so you can connect what you notice in one room to what you do in the other.</p>
+    <div class="gallery">
+      <figure class="shot"><img src="img/space-gym.webp" alt="Training floor with boxing ring"><figcaption>Training floor and ring</figcaption></figure>
+      <figure class="shot"><img src="img/space-kitchen.webp" alt="Full commercial kitchen"><figcaption>Full kitchen</figcaption></figure>
+      <figure class="shot"><img src="img/space-lounge.webp" alt="Lounge with pool table"><figcaption>Lounge</figcaption></figure>
+      <figure class="shot"><img src="img/space-lodge.webp" alt="The Culture Cove lodge"><figcaption>Culture Cove lodge</figcaption></figure>
+      <figure class="shot"><img src="img/space-sitting.webp" alt="Sitting area"><figcaption>Quiet rooms</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow">In your corner</p>
+    <div class="guide-grid">
+      <div>
+        <h2>Vaney Hariri</h2>
+        <p class="lede" style="margin-top:.9rem">Vaney Hariri is chief culture officer and co-founder of Think 3D Solutions. He also co-founded Culture Cove to give people a place to learn, rest and grow. At Combat Culture, guided movement and reflection bring that approach to life.</p>
+        <p class="muted" style="margin-top:1.6rem">The job isn’t to prove how tough you are. It’s to notice what you do when a moment gets hard, then take that insight back to how you lead.</p>
+        <p style="margin-top:1.4rem"><a href="https://www.letsthink3d.com/about-us">Meet the Think 3D team</a></p>
+      </div>
+      <div>
+      <figure class="portrait">
+        <img src="img/vaney.webp" alt="Vaney Hariri">
+        <figcaption>Vaney Hariri, co-founder of Think 3D Solutions</figcaption>
+      </figure>
+      </div>
+    </div>
+    <div class="cta-row">
+      <a class="cta cohort-link" href="https://culture-cove-booking.letsthink3d.com/combat-culture-cohorts">See December cohort and register</a>
+      <p class="cta-note">Check availability on the official Culture Cove booking page.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow">The plan</p>
+    <h2>Three steps.</h2>
+    <div class="steps">
+      <div class="step"><h3>Pick the cohort.</h3><p>One date open. December 4 to 6.</p></div>
+      <div class="step"><h3>Come alone or with colleagues.</h3><p>Book through the official December cohort page.</p></div>
+      <div class="step"><h3>Show up.</h3><p>We handle the rest.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="agenda" id="agenda">
+  <div class="wrap">
+    <p class="eyebrow">Friday to Sunday</p>
+    <h2>What the weekend looks like.</h2>
+    <p class="lede" style="margin-top:1rem">Here’s the planned flow. The attendee confirmation will include the final schedule and departure time.</p>
+    <div class="agenda-grid">
+      <article class="agenda-card">
+        <p class="eyebrow">Friday, Dec 4</p><h3>Arrive and notice your starting point</h3>
+        <dl><dt>11:00 a.m. CT · Arrival</dt><dd>Get settled and tour the lodge and gym.</dd>
+        <dt>Afternoon · Opening discussion</dt><dd>Name one response you want to change, then take that question into an introductory guided movement session.</dd>
+        <dt>Evening · Dinner</dt><dd>Meet the people you’ll learn alongside.</dd></dl>
+      </article>
+      <article class="agenda-card">
+        <p class="eyebrow">Saturday, Dec 5</p><h3>Practice responding under pressure</h3>
+        <dl><dt>Morning · Guided discussion</dt><dd>Talk through how composure and persistence show up in the moments you find hardest.</dd>
+        <dt>Movement and reflection</dt><dd>Move at your own intensity, pause to reflect, and connect it to a situation at work or at home.</dd>
+        <dt>Evening · Group conversation</dt><dd>Share what you noticed and what you want to practice next.</dd></dl>
+      </article>
+      <article class="agenda-card">
+        <p class="eyebrow">Sunday, Dec 6</p><h3>Decide what you’ll take home</h3>
+        <dl><dt>Morning · Going-forward plan</dt><dd>Write down one situation and one response you’ll practice when you get back.</dd>
+        <dt>Late morning · Wrap-up and departure</dt><dd>Check the attendee confirmation for exact departure timing.</dd></dl>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="offer" id="book">
+  <div class="wrap">
+    <p class="eyebrow">What’s included</p>
+    <h2>One price. Everything covered.</h2>
+    <div class="price"><span class="amt">$899</span><span class="per">per person</span></div>
+    <p class="dim" style="font-family:var(--font-mono);font-size:.8rem">December 4–6, 2026. Check current availability on the official booking page.</p>
+
+    <div class="cols">
+      <div class="col">
+        <h3>What&rsquo;s included</h3>
+        <ul class="rows">
+          <li><b>Three days of guided personal development</b><span>Friday, Dec 4 to Sunday, Dec 6, with discussion, movement and reflection.</span></li>
+          <li><b>Meals and on-site lodging</b><span>Chef-prepared meals and overnight accommodation at Culture Cove.</span></li>
+          <li><b>Guided movement</b><span>No experience required. You choose your intensity.</span></li>
+          <li><b>Time in the gym and lodge</b><span>Work through a challenge, then reflect on it with the group.</span></li>
+        </ul>
+      </div>
+      <div class="col">
+        <h3>What you leave with</h3>
+        <ul class="rows">
+          <li><b>A pattern you can recognize</b><span>Notice how you tend to respond when things get uncomfortable.</span></li>
+          <li><b>A response you can practice</b><span>Try a deliberate response in a guided group setting.</span></li>
+          <li><b>A next step for Monday</b><span>Identify one situation where you’ll take that response back to work.</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="cta-row">
+      <a class="cta cohort-link" href="https://culture-cove-booking.letsthink3d.com/combat-culture-cohorts">See December cohort and register</a>
+      <p class="cta-note">Check availability on the official Culture Cove booking page.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow">Questions</p>
+    <h2>Before you book.</h2>
+    <div class="faq">
+      <details><summary>Can I come on my own, or do I need to bring my team?<span></span></summary><div class="ans">Either works. The retreat is at its best when a team comes together, because they go home sharing the same language. Individual leaders are welcome and book the same way. Ask about room arrangements if you’re coming with someone.</div></details>
+      <details><summary>How physical is it?<span></span></summary><div class="ans">No boxing experience is needed, and you choose your intensity. The program asks that participants be able to take part in moderate physical activity.</div></details>
+      <details><summary>Are meals included?<span></span></summary><div class="ans">Yes. All meals are cooked on site in the commercial kitchen and are part of the seat price.</div></details>
+      <details><summary>How do I ask a question before I book?<span></span></summary><div class="ans">Contact <a href="https://www.theculturecove.com/">Culture Cove</a> for questions about accessibility, accommodations, or the weekend.</div></details>
+      <details><summary>Where exactly is Culture Cove?<span></span></summary><div class="ans">Culture Cove is at 45345 311th Street, Meckling, SD 57069.</div></details>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow">Logistics</p>
+    <dl class="logi">
+      <div><dt>Arrive</dt><dd>Fri Dec 4, 11:00 a.m. CT</dd></div>
+      <div><dt>Depart</dt><dd>Sun Dec 6, late morning</dd></div>
+      <div><dt>Where</dt><dd>45345 311th Street, Meckling, SD</dd></div>
+      <div><dt>Seats</dt><dd>Check booking page</dd></div>
+      <div><dt>Meals</dt><dd>Included</dd></div>
+      <div><dt>Lodging</dt><dd>Included</dd></div>
+      <div><dt>Per seat</dt><dd>$899</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="close">
+  <div class="wrap">
+    <p class="eyebrow">If nothing changes</p>
+    <p class="ask">If nothing changes, what stays the same?</p>
+    <p class="lede">The conversation you’ve been putting off still needs to happen. The next tense meeting will ask for a response. Give yourself a place to practice it before you’re back in the room.</p>
+    <div class="cta-row">
+      <a class="cta cohort-link" href="https://culture-cove-booking.letsthink3d.com/combat-culture-cohorts">See December cohort and register</a>
+      <p class="cta-note">Check availability on the official Culture Cove booking page.</p>
+    </div>
+  </div>
+</section>
+
+<section class="reserve" id="reserve">
+  <div class="wrap">
+    <p class="eyebrow">Reserve a seat</p>
+    <h2>Combat Culture · December 4–6, 2026</h2>
+    <p class="lede" style="margin-top:1rem">$899 per person. Meals and lodging included. Come on your own or with colleagues. No boxing experience required.</p>
+    <div class="cta-row">
+      <a class="cta cohort-link" href="https://culture-cove-booking.letsthink3d.com/combat-culture-cohorts">See December cohort and register</a>
+      <p class="cta-note">The official Culture Cove booking page confirms current availability and handles registration.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <img src="img/logo.webp" alt="Culture Cove">
+    <span>Combat Culture &middot; Culture Cove &middot; Meckling, South Dakota</span>
+  </div>
+</footer>
+
+<script>
+// Keep recognized incoming campaign attribution on the official cohort links.
+const incoming = new URLSearchParams(location.search);
+const campaignKeys = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','utm_id'];
+document.querySelectorAll('a.cohort-link').forEach(function(link) {
+  const destination = new URL(link.href);
+  campaignKeys.forEach(function(key) {
+    if (!destination.searchParams.has(key) && incoming.has(key)) destination.searchParams.set(key, incoming.get(key));
+  });
+  link.href = destination.toString();
+});
+</script>
+
+</body>
+</html>
